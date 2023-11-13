@@ -1,6 +1,12 @@
 # Import the dependencies.
-
-
+from sqlite3 import Date
+from flask import Flask, jsonify
+import numpy as np
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, inspect, func
+import datetime as dt
 
 #################################################
 # Database Setup
@@ -16,8 +22,7 @@
 
 
 # Create our session (link) from Python to the DB
-
-
+session = Session(engine)
 #################################################
 # Flask Setup
 #################################################
